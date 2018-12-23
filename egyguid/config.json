@@ -1,0 +1,8 @@
+{
+  "SECRET_KEY": "p^4p!zjk#@jg&wdc_ct$g@-0y^8n@+ngw7%s#e0mv^$x#$ea09",
+  "DEBUG": true,
+  "DB_NAME": "egyguid",
+  "DB_USER": "postgres",
+  "DB_PASSWORD": "123456",
+  "DB_HOST": "localhost"
+}
