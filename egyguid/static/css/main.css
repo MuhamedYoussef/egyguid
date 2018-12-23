@@ -10517,6 +10517,12 @@ footer a:hover {
   .navigation a {
     cursor: pointer;
   }
+  .cities h2 {
+    text-align: center;
+  }
+  .cities .card {
+    margin: 10px auto;
+  }
   .about h1 {
     font-size: 2rem;
   }
