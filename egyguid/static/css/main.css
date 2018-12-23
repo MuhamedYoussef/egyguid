@@ -10421,16 +10421,16 @@ body {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .upper_nav a:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 /* Index_Carousel */
 #index_carousel .card-img-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 /* Cities */
@@ -10455,7 +10455,7 @@ body {
 
 .adventure .card-img-overlay,
 .city .card-img-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 footer p {
