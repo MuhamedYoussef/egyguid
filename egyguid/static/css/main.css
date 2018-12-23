@@ -10404,7 +10404,7 @@ body {
 }
 
 .navigation nav {
-  background-color: rgba(116, 116, 116, 0.3);
+  background-color: rgba(52, 58, 64, 0.4);
   border-radius: 10px;
 }
 
@@ -10421,6 +10421,11 @@ body {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
+  opacity: 0.3;
+}
+
+.upper_nav a:hover {
+  opacity: 0.8;
 }
 
 /* Index_Carousel */
@@ -10499,6 +10504,19 @@ footer a:hover {
 
 @media (max-width: 576px) {
   /* xs display */
+  .navigation {
+    position: static;
+    z-index: 10;
+    width: 100%;
+  }
+  .navigation nav {
+    background-color: #343a40;
+    border-radius: 0px;
+    margin-top: 0 !important;
+  }
+  .navigation a {
+    cursor: pointer;
+  }
   .about h1 {
     font-size: 2rem;
   }
