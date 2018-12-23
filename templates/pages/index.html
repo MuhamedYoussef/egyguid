@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- main content -->
+{% block content %}
+<main>
+  <div id="index_carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#index_carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#index_carousel" data-slide-to="1"></li>
+      <li data-target="#index_carousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="{% static 'img/1.jpg' %}" class="d-block w-100 carousel_img" 
+          alt="img1" />
+        <div class="card-img-overlay"></div>
+        <div class="carousel-caption d-none d-sm-block">
+          <h1 class="display-2">Explore Egypt</h1>
+          <p class="lead font-weight-bold">AS YOU NEVER SEEN BEFORE</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'img/2.jpg' %}" class="d-block w-100 carousel_img" alt="img2" />
+        <div class="card-img-overlay"></div>
+        <div class="carousel-caption d-none d-sm-block">
+          <h1 class="display-2">Greatest Cluture</h1>
+          <p class="lead font-weight-bold">ON EARTH!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'img/3.jpg' %}" class="d-block w-100 carousel_img" alt="img3" />
+        <div class="card-img-overlay"></div>
+        <div class="carousel-caption d-none d-sm-block">
+          <h1 class="display-2">Greatest Empire</h1>
+          <p class="lead font-weight-bold">HAVE EVER BEEN!</p>
+        </div>
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#index_carousel"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#index_carousel"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <section class="cities container py-5">
+    <h2 class="display-4 my-5 text-dark">Egyptian Cities</h2>
+    <div class="card-columns">
+    {% for city in cities %}
+      <div class="card shadow text-white mb-4" style="max-width: 20rem;">
+        <a href="{% url 'city' slug=city.slug %}">
+          <img class="card-img" src="{{city.img}}" alt="{{city.slug}}"
+          />
+          <div class="card-img-overlay"><h5 class="card-title">{{city.name}}</h5></div>
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+
+  <section class="adventure my-5">
+    <h1 class="text-dark text-center display-4 py-5">Live the Adventure</h1>
+    <div class="card">
+      <img src="{% static 'img/sand.jpg' %}" class="card-img" alt="sand" />
+      <div class="card-img-overlay">
+        <h1 class="card-title pt-5 text-right">On the Sand</h1>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'img/diving.jpg' %}" class="card-img" alt="diving" />
+      <div class="card-img-overlay">
+        <h1 class="card-title pt-5">In the Sea</h1>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'img/camel.jpg' %}" class="card-img" alt="camel" />
+      <div class="card-img-overlay">
+        <h1 class="card-title pt-5 text-center">Riding a Camel</h1>
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'img/fly.jpg' %}" class="card-img" alt="fly" />
+      <div class="card-img-overlay">
+        <h1 class="card-title pt-5 text-right">Or fly Free</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit py-5 my-5 container">
+    <h1 class="text-dark">Don't miss such moments</h1>
+    <button class="btn btn-light" id="btsn">VISIT NOW</button>
+  </section>
+
+  <footer class="bg-dark p-5">
+    <div class="row">
+      <div class="col-md-3"><h1 class="mb-3">Egyguid</h1></div>
+      <div class="col-md-3 mt-5">
+        <a class="d-block p-2" href="#">ABOUT US</a>
+      </div>
+      <div class="col-md-3 mt-5">
+        <a class="d-block p-2" id="aim_cities2">CITIES</a>
+        <a class="d-block p-2" href="#">BLOG</a>
+      </div>
+      <div class="col-md-3 mt-5"><a class="d-block p-2" href="#">VISIT</a></div>
+    </div>
+    <p class="my-5 pt-5 text-center">&copy; All rights reserved - 2018</p>
+  </footer>
+</main>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- main content -->
+{% block content %}
+<main class="city">
+  <div class="card">
+    <img src="{{city.img}}" class="card-img" alt="sand" />
+    <div class="card-img-overlay">
+      <h1 class="card-title pt-5 text-left">{{city.name}}</h1>
+    </div>
+  </div>
+</main>
+{% endblock %}

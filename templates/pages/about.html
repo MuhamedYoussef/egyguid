@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<main class="about">
+  <div class="full_screen_video">
+    <video src="{% static 'videos/egypt.mp4' %}" autoplay="true" loop="true" ></video>
+    <div class="overlay"></div>
+  </div>
+
+  <div class="about_content container pt-5 mt-5">
+    <br /><br />
+    <h1 class="display-3 text-center py-3">Enjoy Egypt with us</h1>
+    <p class="lead mx-5  text-center">
+      We are Egyptian torguid group aiming to show You what is best about Egypt cuz such advanture can not be missed. Not like borring travel and torguid companies, we gonna show you Egypt from an eye of Egyptians and engoy every moment with you. If you are interested you can contact us
+    </p>
+    <p class="text-center font-weight-bold pt-2">
+      Mu7med.Youssef@gmail.com
+    </p>
+  </div>
+</main>
+{% endblock %}
