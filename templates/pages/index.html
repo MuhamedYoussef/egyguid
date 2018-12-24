@@ -19,7 +19,7 @@
         <div class="card-img-overlay"></div>
         <div class="carousel-caption d-none d-sm-block">
           <h1 class="display-2">Explore Egypt</h1>
-          <p class="lead font-weight-bold">AS YOU NEVER SEEN BEFORE</p>
+          <p class="lead font-weight-bold pt-2">AS YOU NEVER SEEN BEFORE</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -31,7 +31,7 @@
         <div class="card-img-overlay"></div>
         <div class="carousel-caption d-none d-sm-block">
           <h1 class="display-2">Greatest Cluture</h1>
-          <p class="lead font-weight-bold">ON EARTH!</p>
+          <p class="lead font-weight-bold pt-2">WHERE IT ALL BEGINS!</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -42,8 +42,8 @@
         />
         <div class="card-img-overlay"></div>
         <div class="carousel-caption d-none d-sm-block">
-          <h1 class="display-2">Greatest Empire</h1>
-          <p class="lead font-weight-bold">HAVE EVER BEEN!</p>
+          <h1 class="display-2">Oldest Empire</h1>
+          <p class="lead font-weight-bold pt-2">ON EARTH!</p>
         </div>
       </div>
     </div>
@@ -67,11 +67,27 @@
     </a>
   </div>
 
-  <section class="cities container py-5">
-    <h2 class="display-4 my-5 text-dark">Egyptian Cities</h2>
-    <div class="card-columns">
+  <section class="cities container my-5 py-5">
+    <h2
+      class="display-4 my-5 text-dark"
+      data-sal="slide-down"
+      data-sal-duration="1200"
+      data-sal-delay="300"
+      data-sal-easing="ease-out-bounce"
+    >
+      Egyptian Cities
+    </h2>
+    <div class="card-columns mb-5">
       {% for city in cities %}
-      <div class="card shadow text-white mb-4" style="max-width: 20rem;">
+      <div
+        class="card shadow text-white mb-4"
+        style="max-width: 20rem;"
+        class="display-4 my-5 text-dark"
+        data-sal="slide-up"
+        data-sal-duration="1000"
+        data-sal-delay="{{ city.sal_delay }}"
+        data-sal-easing="ease-out-bounce"
+      >
         <a href="{% url 'city' slug=city.slug %}">
           <img class="card-img" src="{{ city.img }}" alt="{{ city.slug }}" />
           <div class="card-img-overlay">
@@ -84,29 +100,69 @@
   </section>
 
   <section class="adventure my-5">
-    <h1 class="text-dark text-center display-4 py-5">Live the Adventure</h1>
+    <h1
+      class="text-dark text-center display-4 py-5"
+      data-sal="slide-down"
+      data-sal-duration="1200"
+      data-sal-delay="400"
+      data-sal-easing="ease-out-bounce"
+    >
+      Live the Adventure
+    </h1>
     <div class="card">
       <img src="{% static 'img/sand.jpg' %}" class="card-img" alt="sand" />
       <div class="card-img-overlay">
-        <h1 class="card-title pt-5">On the Sand</h1>
+        <h2
+          class="card-title pt-5"
+          data-sal="slide-right"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease-out-bounce"
+        >
+          On the Sand
+        </h2>
       </div>
     </div>
     <div class="card">
       <img src="{% static 'img/diving.jpg' %}" class="card-img" alt="diving" />
       <div class="card-img-overlay">
-        <h1 class="card-title pt-5 text-center">In the Sea</h1>
+        <h2
+          class="card-title pt-5 text-center"
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease-out-bounce"
+        >
+          In the Sea
+        </h2>
       </div>
     </div>
     <div class="card">
       <img src="{% static 'img/camel.jpg' %}" class="card-img" alt="camel" />
       <div class="card-img-overlay">
-        <h1 class="card-title pt-5 text-right">Riding a Camel</h1>
+        <h2
+          class="card-title pt-5 text-right"
+          data-sal="slide-down"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease-out-bounce"
+        >
+          Riding a Camel
+        </h2>
       </div>
     </div>
     <div class="card">
       <img src="{% static 'img/fly.jpg' %}" class="card-img" alt="fly" />
       <div class="card-img-overlay">
-        <h1 class="card-title pt-5 text-center">Or fly Free</h1>
+        <h2
+          class="card-title pt-5 text-center"
+          data-sal="zoom-in"
+          data-sal-duration="1000"
+          data-sal-delay="300"
+          data-sal-easing="ease-out-bounce"
+        >
+          Or fly Free
+        </h2>
       </div>
     </div>
   </section>
@@ -118,7 +174,7 @@
 
   <footer class="bg-dark p-5">
     <div class="row">
-      <div class="col-md-3"><h1 class="mb-3">Egyguid</h1></div>
+      <div class="col-md-3 text-primary"><h1 class="mb-3">Egyguid</h1></div>
       <div class="col-md-3 mt-5">
         <a class="d-block p-2" href="#">ABOUT US</a>
       </div>

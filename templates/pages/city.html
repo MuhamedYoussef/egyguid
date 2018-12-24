@@ -6,7 +6,10 @@
   <div class="card bg-dark text-white">
     <img src="{{ city.img }}" class="card-img" alt="{{ city.name }}" />
     <div class="card-img-overlay p-5">
-      <h5 class="card-title display-2 p-5 mt-5 name">{{ city.name }}</h5>
+      <h2 class="card-title display-2 p-5 mt-5 name">{{ city.name }}</h2>
+    </div>
+    <div class="card-img-overlay city_overlay p-5 d-flex align-items-end">
+      <img src="{% static 'img/city_overlay.svg' %}" alt="overlay" />
     </div>
   </div>
   <div class="container my-5 pb-5">
