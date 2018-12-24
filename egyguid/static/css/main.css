@@ -10387,7 +10387,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 @font-face {
   font-family: "Gloss And Bloom";
-  src: url("fonts/Gloss_And_Bloom.ttf");
+  src: url("{% static 'css/fonts/Gloss_And_Bloom.ttf' %}");
 }
 
 body {
