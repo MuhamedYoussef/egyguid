@@ -10559,5 +10559,9 @@ footer a:hover {
     margin-top: 10px !important;
     font-size: 3.2rem;
   }
+  .about_content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 }
 /*# sourceMappingURL=main.css.map */
