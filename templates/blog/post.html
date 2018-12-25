@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %}
+
+<!-- blog content -->
+{% block content %} {% include '../partials/_navbar_default.html' %}
+<main class="blog_single_post mb-5">
+  <section class="container-fluid">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 mt-5">
+        <img
+          src="
+            {% if post.image %}
+              {{ post.image.url }}
+            {%else%}
+              {{ post.image_url }}
+            {% endif %}"
+          class="img-fluid rounded mx-auto my-auto d-block"
+          style="max-height:300px;"
+        />
+        <h1 class="post_title text-center pt-5">{{ post.title }}</h1>
+        <p class="text-center font-weight-bold">
+          <span class="bg-primary p-1 mr-2 rounded">
+            <i class="fas fa-user"></i> Mohamed Youssef
+          </span>
+          <span class="bg-primary p-1 rounded">
+            <i class="far fa-clock ml-2"></i> {{ post.pub_date }}
+          </span>
+        </p>
+        <div class="lead my-5 post_content font-weight-normal">
+          <p>{{ post.content | linebreaks }}</p>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </section>
+</main>
+{% include '../partials/_footer.html' %} {% endblock%}

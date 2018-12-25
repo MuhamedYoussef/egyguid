@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Egyguid</title>
+    <style>
+      @font-face {
+        font-family: "Gloss And Bloom";
+        src: url("{% static 'fonts/Gloss_And_Bloom.ttf' %}");
+      }
+    </style>
     <link
       href="https://fonts.googleapis.com/css?family=Merriweather"
       rel="stylesheet"
@@ -19,15 +25,9 @@
     />
     <link rel="stylesheet" href="{% static 'css/sal.css' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-    <style>
-      @font-face {
-        font-family: "Gloss And Bloom";
-        src: url("{% static 'fonts/Gloss_And_Bloom.ttf' %}");
-      }
-    </style>
   </head>
   <body>
-    {% include 'partials/_navbar.html' %}
+    <!-- {% include 'partials/_navbar.html' %} -->
 
     <!-- main content -->
     {% block content %}{% endblock %}

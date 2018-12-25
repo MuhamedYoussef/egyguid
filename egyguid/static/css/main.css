@@ -10391,13 +10391,25 @@ body {
 
 body p,
 body a,
-body button {
+body h3,
+body button,
+body .post_title {
   font-family: "Merriweather", serif;
+}
+
+body button {
+  font-size: 1.5rem !important;
+  letter-spacing: 0.4rem;
+  font-weight: 700 !important;
 }
 
 body a:hover {
   cursor: pointer;
   color: #ff9f1c !important;
+}
+
+.navbar-brand {
+  font-family: "Gloss And Bloom";
 }
 
 .navigation {
@@ -10409,11 +10421,6 @@ body a:hover {
 .navigation nav {
   background-color: rgba(52, 58, 64, 0.4);
   border-radius: 10px;
-}
-
-.navigation .navbar-brand {
-  font-family: "Gloss And Bloom";
-  color: #ff9f1c;
 }
 
 .upper_nav {
@@ -10443,6 +10450,11 @@ body a:hover {
 
 #index_carousel p {
   letter-spacing: 0.5rem;
+  padding: 5px 10px 0;
+  display: inline-block;
+  color: #ff9f1c;
+  background: rgba(22, 25, 37, 0.5);
+  border-radius: 5px;
 }
 
 /* Cities */
@@ -10460,13 +10472,20 @@ body a:hover {
 
 /* Adventure and city */
 .adventure .card,
-.city .card {
-  margin: 0;
+.city .card,
+.blog .card {
   border: 0;
 }
 
+.adventure .card img,
+.city .card img,
+.blog .card img {
+  border-radius: 0;
+}
+
 .adventure .card-img-overlay,
-.city .card-img-overlay {
+.city .card-img-overlay,
+.blog .card-img-overlay {
   background: rgba(0, 0, 0, 0.4);
 }
 
@@ -10508,13 +10527,63 @@ footer a:hover {
 }
 
 /* City */
-.city .city_overlay {
+.city .bottom_overlay,
+.blog .bottom_overlay {
   padding: 0 !important;
 }
 
-.city .city_overlay img {
+.city .bottom_overlay img,
+.blog .bottom_overlay img {
   min-width: 100%;
   margin-bottom: -2px;
+}
+
+.city .card-title,
+.blog .card-title {
+  z-index: 10;
+  opacity: 0.8;
+  color: white !important;
+}
+
+/* Blog */
+.blog {
+  color: #161925;
+}
+
+.blog .card-img-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.blog .blog_post {
+  max-width: 700px;
+  min-width: 200px;
+}
+
+.blog .blog_post:hover {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
+}
+
+.blog a.post_title:hover {
+  color: #3c4465 !important;
+  text-decoration: none;
+}
+
+.post_title {
+  color: #161925;
+}
+
+.post_content {
+  font-family: "Montserrat", sans-serif;
+}
+
+.post_content p {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Blog Single post */
+.blog_single_post {
+  color: #161925;
 }
 
 /*****************************************************/
@@ -10551,17 +10620,30 @@ footer a:hover {
   .about p {
     margin: 0 0 20px 0 !important;
   }
-  .city h5 {
-    margin-left: -20px;
-  }
-  .city .name {
+  .city .title {
     padding: 0 !important;
     margin-top: 10px !important;
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
   .about_content {
     margin: 0 !important;
     padding: 0 !important;
+  }
+  .blog .title {
+    font-size: 1.7rem !important;
+  }
+  .blog button {
+    font-size: 1.2rem !important;
+    letter-spacing: 0.2rem;
+  }
+  .blog .bottom_overlay img {
+    margin-bottom: -10px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog .title {
+    font-size: 3rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

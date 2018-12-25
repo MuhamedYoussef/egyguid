@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %}
 
 <!-- main content -->
-{% block content %}
+{% block content %} {% include '../partials/_navbar.html' %}
 <main>
   <div id="index_carousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -19,7 +19,7 @@
         <div class="card-img-overlay"></div>
         <div class="carousel-caption d-none d-sm-block">
           <h1 class="display-2">Explore Egypt</h1>
-          <p class="lead font-weight-bold pt-2">AS YOU NEVER SEEN BEFORE</p>
+          <p class="lead font-weight-bold">AS YOU NEVER SEEN BEFORE</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -31,7 +31,7 @@
         <div class="card-img-overlay"></div>
         <div class="carousel-caption d-none d-sm-block">
           <h1 class="display-2">Greatest Cluture</h1>
-          <p class="lead font-weight-bold pt-2">WHERE IT ALL BEGINS!</p>
+          <p class="lead font-weight-bold">WHERE IT ALL BEGINS!</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -43,7 +43,7 @@
         <div class="card-img-overlay"></div>
         <div class="carousel-caption d-none d-sm-block">
           <h1 class="display-2">Oldest Empire</h1>
-          <p class="lead font-weight-bold pt-2">ON EARTH!</p>
+          <p class="lead font-weight-bold">ON EARTH!</p>
         </div>
       </div>
     </div>
@@ -171,20 +171,5 @@
     <h1 class="text-dark">Don't miss such moments</h1>
     <button class="btn btn-light" id="btsn">VISIT NOW</button>
   </section>
-
-  <footer class="bg-dark p-5">
-    <div class="row">
-      <div class="col-md-3 text-primary"><h1 class="mb-3">Egyguid</h1></div>
-      <div class="col-md-3 mt-5">
-        <a class="d-block p-2" href="#">ABOUT US</a>
-      </div>
-      <div class="col-md-3 mt-5">
-        <a class="d-block p-2" id="aim_cities2">CITIES</a>
-        <a class="d-block p-2" href="#">BLOG</a>
-      </div>
-      <div class="col-md-3 mt-5"><a class="d-block p-2" href="#">VISIT</a></div>
-    </div>
-    <p class="my-5 pt-5 text-center">&copy; All rights reserved - 2018</p>
-  </footer>
 </main>
-{% endblock %}
+{% include '../partials/_footer.html' %} {% endblock %}
