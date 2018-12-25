@@ -11,7 +11,7 @@ class Post(models.Model):
     content = models.TextField()
     image = models.ImageField(upload_to='blog/%Y/%m/%d/', blank=True)
     image_url = models.CharField(max_length=200, blank=True)
-    slug = models.SlugField(max_length=100)
+    slug = models.SlugField(max_length=100, blank=True)
 
     def __str__(self):
         return self.title
