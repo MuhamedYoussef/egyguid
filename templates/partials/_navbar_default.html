@@ -42,7 +42,11 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="usermenu">
             <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-            <a class="dropdown-item" href="{% url 'profile' %}">Logout</a>
+            <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+            <form action="{% url 'logout' %}" method="POST" id="logout">
+              {% csrf_token %}
+              <input type="hidden">
+            </form>
           </div>
         </div>
         {% else %}
