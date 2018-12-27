@@ -28,10 +28,11 @@
   </head>
   <body>
     <!-- {% include 'partials/_navbar.html' %} -->
-
+    
     <!-- main content -->
     {% block content %}{% endblock %}
-
+    
+    {% include 'partials/_message.html' %}
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -60,6 +61,11 @@
       sal({
         once: false
       });
+
+      // Messages function
+      //setTimeout(function() {
+      //  $('#message').fadeOut('slow')
+      //}, 3000)
     </script>
   </body>
 </html>

@@ -10386,6 +10386,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 body {
+  background: #f1f1f1;
   color: #fff;
 }
 
@@ -10397,9 +10398,14 @@ body .post_title {
   font-family: "Merriweather", serif;
 }
 
+body input,
+body #usernamehelp {
+  font-family: "Montserrat", sans-serif;
+}
+
 body button {
-  font-size: 1.5rem !important;
-  letter-spacing: 0.4rem;
+  font-size: 1.1rem !important;
+  letter-spacing: 0.2rem;
   font-weight: 700 !important;
 }
 
@@ -10421,6 +10427,11 @@ body a:hover {
 .navigation nav {
   background-color: rgba(52, 58, 64, 0.4);
   border-radius: 10px;
+}
+
+.dropdown button {
+  font-size: 1rem !important;
+  letter-spacing: 0.1rem;
 }
 
 .upper_nav {
@@ -10468,6 +10479,8 @@ body a:hover {
 
 .cities a:hover .card-img-overlay {
   background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Adventure and city */
@@ -10487,6 +10500,10 @@ body a:hover {
 .city .card-img-overlay,
 .blog .card-img-overlay {
   background: rgba(0, 0, 0, 0.4);
+}
+
+.city p {
+  font-size: 1.6rem;
 }
 
 footer p {
@@ -10584,6 +10601,20 @@ footer a:hover {
 /* Blog Single post */
 .blog_single_post {
   color: #161925;
+}
+
+/* creating custom toast */
+#message {
+  position: fixed;
+  top: 90vh;
+  right: 5vw;
+  padding: 8px 10px;
+  border-radius: 7px;
+  z-index: 100;
+}
+
+#message p {
+  margin: 0;
 }
 
 /*****************************************************/

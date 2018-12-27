@@ -1,7 +1,9 @@
 <div class="upper_nav">
   <div class="d-flex bd-highlight container">
     <a href="{% url 'about' %}" class="mr-auto bd-highlight p-2">ABOUT US</a>
-    <a class="p-2 bd-highlight"> <i class="fab fa-facebook-square"></i> </a>
+    <a class="p-2 bd-highlight" href="https://www.facebook.com/MuhmedYoussef" target="_blank"> 
+      <i class="fab fa-facebook-square"></i>
+    </a>
     <a class="p-2 bd-highlight"><i class="fab fa-instagram"></i></a>
   </div>
 </div>
@@ -33,13 +35,25 @@
         <li class="nav-item font-weight-bold mr-2">
           <a class="nav-link" href="{% url 'blog' %}">BLOG</a>
         </li>
+        {% if user.is_authenticated %}
+        <div class="dropdown">
+          <button class="btn btn-sm text-primary dropdown-toggle" type="button" id="usermenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{user.first_name}}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="usermenu">
+            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+            <a class="dropdown-item" href="{% url 'profile' %}">Logout</a>
+          </div>
+        </div>
+        {% else %}
         <li class="nav-item">
           <a
-            class="nav-link font-weight-bold btn btn-light text-dark"
-            href="{% url 'blog' %}"
-            >Login</a
+          class="nav-link font-weight-bold btn btn-outline-dark"
+          href="{% url 'login' %}"
+          >Login</a
           >
         </li>
+        {% endif %}
       </ul>
     </div>
   </div>

@@ -1,3 +1,4 @@
+from django.contrib.messages import constants as messages
 import os
 import json
 
@@ -25,6 +26,7 @@ ALLOWED_HOSTS = ['localhost', 'egyguid.herokuapp.com']
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'blog.apps.BlogConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,3 +126,9 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}

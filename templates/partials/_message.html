@@ -1,0 +1,12 @@
+{% if messages %}
+  {% for message in messages %}
+    <div id="message" 
+      class="bg-dark text-white shadow"
+      data-sal="slide-up"
+      data-sal-duration="100"
+      data-sal-delay="0"
+    >
+      <p>{{ message }}</p>
+    </div>
+  {% endfor %}
+{% endif %}

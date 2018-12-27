@@ -20,9 +20,13 @@
       <img src="{% static 'img/city_overlay.svg' %}" alt="overlay" />
     </div>
   </div>
-  <div class="container my-5 pb-5">
-    <p class="lead text-dark tex-weight-bold">{{ city.detail }}</p>
-    <br /><br /><br /><br />
+  <div class="row container-fluid my-5 mx-0">
+    <div class="col-sm-12 col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+      <p class="lead text-dark text-justify tex-weight-bold">{{ city.detail }}</p>
+    </div>
+    <div class="col-sm-12 col-md-2"></div>
   </div>
+  <br /><br /><br /><br />
 </main>
 {% endblock %}
