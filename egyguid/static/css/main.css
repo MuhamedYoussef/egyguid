@@ -10401,7 +10401,8 @@ body .font-secondary {
 }
 
 body input,
-body #usernamehelp {
+body #usernamehelp,
+body textarea {
   font-family: "Montserrat", sans-serif;
 }
 

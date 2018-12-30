@@ -85,6 +85,7 @@ def edit(request):
         last = request.POST['last']
         email = request.POST['email']
         username = request.POST['username']
+        bio = request.POST['bio']
         image = request.FILES.get('img', False)
         # password = request.POST['password']
 
@@ -109,6 +110,7 @@ def edit(request):
         request.user.last_name = last
         request.user.email = email.lower()
         request.user.username = username.lower()
+        request.user.profile.bio = bio
         if image:
             request.user.profile.image = image
         # if password:
@@ -116,6 +118,6 @@ def edit(request):
 
         request.user.save()
         messages.info(request, 'Profile updated')
-        return redirect('edit')
+        return redirect('profile')
     else:
         return render(request, 'accounts/edit.html')

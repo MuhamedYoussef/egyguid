@@ -91,6 +91,17 @@
             </div>
           </div>
 
+          <div class="form-group mt-4">
+            <label for="bio">BIO</label>
+            <textarea
+              class="form-control"
+              id="bio"
+              rows="3"
+              name="bio"
+              placeholder="Add BIO so people know more about you!"
+            >{% if user.profile.bio %}{{ user.profile.bio }}{% endif %}</textarea>
+          </div>
+
           <!-- Security Settings -->
           <h3 class="mt-5 pt-5">Security Settings</h3>
           <div class="form-group">

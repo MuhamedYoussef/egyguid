@@ -18,11 +18,11 @@
             {% endif %}
           "
           alt="profile"
-          style="max-width:50%; height:150px; width:150px;"
+          style="width:50%; min-width:100px; max-width:170px;"
         />
       </div>
       <div class="col-8 p-4">
-        <div class="row mb-5 pb-5" style="max-width:90%">
+        <div class="row mb-5" style="max-width:90%">
           <div class="col-md-12 col-lg-8">
             <h2 class="text-uppercase mb-4  mr-3 d-inline-block">
               {{ user.first_name }} {{ user.last_name }}
@@ -38,13 +38,12 @@
           </div>
         </div>
         <p class="mb-1">
-          <span class="font-weight-bold">Username: </span>{{ user.username }}
-        </p>
-        <p class="mb-1">
-          <span class="font-weight-bold">Email: </span>{{ user.email }}
-        </p>
-        <p class="mb-1">
-          <span class="font-weight-bold">DOB: </span>{{ user.profile.DOB }}
+         {% if user.profile.bio == None or user.profile.bio == ''  %}
+         <span class="font-weight-bold">BIO: </span> 
+         <p class="text-muted">You can edit your profile and add a BIO here</p>
+         {% else %}
+         <span class="font-weight-bold">BIO: </span> <p>{{ user.profile.bio }}</p>
+         {% endif %}
         </p>
       </div>
     </div>
