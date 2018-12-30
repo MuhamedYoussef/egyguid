@@ -10394,8 +10394,10 @@ body p,
 body a,
 body h3,
 body button,
-body .post_title {
-  font-family: "Merriweather", serif;
+body label,
+body .post_title,
+body .font-secondary {
+  font-family: "Merriweather", serif !important;
 }
 
 body input,
@@ -10415,7 +10417,7 @@ body a:hover {
 }
 
 .navbar-brand {
-  font-family: "Gloss And Bloom";
+  font-family: "Gloss And Bloom" !important;
 }
 
 .navigation {

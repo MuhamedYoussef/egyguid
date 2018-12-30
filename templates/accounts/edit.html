@@ -1,0 +1,118 @@
+{% extends 'base.html' %} {% load static %}
+
+<!-- blog content -->
+{% block content %} {% include '../partials/_navbar_default.html' %}
+<main class="edit text-dark">
+  <section class="container mt-5">
+    {% include 'partials/_message.html' %}
+    <form action="{% url 'edit' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="row mb-5">
+        <div class="col-sm-12 col-md-4">
+          <img
+            class="img-fluid d-block mx-auto rounded-circle mb-5"
+            id="profile_img"
+            src="
+            {% if user.profile.image %}
+            {{ user.profile.image.url }}
+            {% else %}
+            http://cdn.onlinewebfonts.com/svg/download_568657.png
+            {% endif %}
+            "
+            alt="profile"
+            style="max-width:50%; height:150px; width:150px;"
+          />
+          <div class="custom-file p-5 mt-3">
+            <input type="file" class="custom-file-input" id="img" name="img" />
+            <label class="custom-file-label" for="img">Upload photo</label>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-8 p-4">
+          <!-- Basic info -->
+          <h3>Basic info</h3>
+          <div class="form-group">
+            <div class="row">
+              <div class="col pr-1">
+                <label for="first">First name</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="first"
+                  name="first"
+                  placeholder="First name..."
+                  minlength="3"
+                  value="{{ user.first_name }}"
+                  required
+                />
+              </div>
+              <div class="col pl-1">
+                <label for="last">Last name</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="last"
+                  name="last"
+                  placeholder="Last name..."
+                  minlength="3"
+                  value="{{ user.last_name }}"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              class="form-control"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter an email"
+              value="{{ user.email }}"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
+              </div>
+              <input
+                class="form-control"
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Pick a Username..."
+                minlength="3"
+                value="{{ user.username }}"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Security Settings -->
+          <h3 class="mt-5 pt-5">Security Settings</h3>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              class="form-control"
+              type="password"
+              name="password"
+              placeholder="Enter new password"
+              minlength="5"
+              disabled
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary px-5 font-weight-bold btn-block mt-4"
+          >
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+{% endblock%}

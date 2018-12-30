@@ -2,13 +2,13 @@
 
 <!-- blog content -->
 {% block content %} {% include '../partials/_navbar_default.html' %}
-<main class="login text-dark">
+<main class="profile text-dark">
   <section class="container mt-5">
     {% include 'partials/_message.html' %}
     <div class="row">
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-4">
         <img
-          class="img-fluid d-block mx-auto"
+          class="img-fluid d-block mx-auto rounded-circle"
           id="profile_img"
           src="
             {% if user.profile.image %}
@@ -18,13 +18,25 @@
             {% endif %}
           "
           alt="profile"
-          style="max-width:100px;"
+          style="max-width:50%; height:150px; width:150px;"
         />
       </div>
-      <div class="col-xs-12 col-sm-8 p-4">
-        <h2 class="text-uppercase mb-5">
-          {{ user.first_name }} {{ user.last_name }}
-        </h2>
+      <div class="col-8 p-4">
+        <div class="row mb-5 pb-5" style="max-width:90%">
+          <div class="col-md-12 col-lg-8">
+            <h2 class="text-uppercase mb-4  mr-3 d-inline-block">
+              {{ user.first_name }} {{ user.last_name }}
+            </h2>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <a
+              class="btn btn-light text-dark text-capitalize btn-block"
+              href="{% url 'edit' %}"
+            >
+              Edit Profile <i class="fas fa-cog"></i>
+            </a>
+          </div>
+        </div>
         <p class="mb-1">
           <span class="font-weight-bold">Username: </span>{{ user.username }}
         </p>
@@ -34,9 +46,6 @@
         <p class="mb-1">
           <span class="font-weight-bold">DOB: </span>{{ user.profile.DOB }}
         </p>
-        <a class="btn btn-light text-dark mt-5 font-weight-bold">
-          Edit Your Profile >
-        </a>
       </div>
     </div>
   </section>
