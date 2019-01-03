@@ -1,58 +1,59 @@
 {% extends 'base.html' %} {% load static %}
 
 <!-- blog content -->
-{% block content %} {% include '../partials/_navbar.html' %}
-<main class="blog">
-  <div class="card">
-    <img src="{% static 'img/blog.jpg' %}" class="card-img" alt="Blog" />
-    <div class="card-img-overlay d-flex align-items-center">
-      <div class="card-img-overlay bottom_overlay d-flex align-items-end">
-        <img src="{% static 'img/city_overlay.svg' %}" alt="overlay" />
-      </div>
-      <div class="card-title pt-5 text-center mx-auto">
-        <h2 class="display-3 title">We share our stories</h2>
-        <button class="btn btn-dark text-primary">TELL US YOURS</button>
-      </div>
-    </div>
-  </div>
+{% block content %} {% include '../partials/_navbar_default.html' %}
+<main class="add_post text-dark my-5 pb-5">
+  <div class="container" style="max-width:700px;">
+    <h3 class="mb-5 text-center text-muted">
+      Welcome to the place where we all share a part of our lives
+    </h3>
 
-  <section class="container my-5">
-    <h3 class="pt-5 display-4">Latest posts</h3>
-    <hr class="mb-5" />
-    {% for post in posts %}
-    <div class="row blog_post p-3 shadow my-4">
-      <div class="col-sm-12 col-md-4 p-0 d-flex align-items-center">
-        <a href="{% url 'post' slug=post.slug %}">
-          <img
-            src="
-            {% if post.image %}
-              {{ post.image.url }}
-            {%else%}
-              {{ post.image_url }}
-            {% endif %}"
-            class="img-fluid rounded mx-auto my-auto d-block"
-          />
-        </a>
+    <form action="{% url 'add' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label class="font-weight-bold" for="title">Title</label>
+        <input
+          class="form-control"
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Give your post a Title"
+          required
+        />
       </div>
-      <div class="col-sm-12 col-md-8">
-        <a class="post_title" href="{% url 'post' slug=post.slug %}">
-          <h3>{{ post.title }}</h3>
-        </a>
-        <p>
-          <span class="bg-primary p-1 mr-2 rounded">
-            <i class="fas fa-user"></i> Mohamed Youssef
-          </span>
-          <span class="bg-primary p-1 rounded">
-            <i class="far fa-clock ml-2"></i> {{ post.pub_date }}
-          </span>
-        </p>
-        <p class="post_content">
-          {{ post.summary }}...
-          <a href="{% url 'post' slug=post.slug %}">Read more</a>
-        </p>
+
+      <div class="form-group">
+        <label class="font-weight-bold" for="content">Content</label>
+        <textarea
+          class="form-control"
+          id="content"
+          rows="10"
+          name="content"
+          placeholder="Let us hear you..."
+          required
+        ></textarea>
       </div>
-    </div>
-    {% endfor %}
-  </section>
+
+      <div class="form-group">
+        <label class="font-weight-bold" for="url">Image URL</label>
+        <input
+          class="form-control"
+          type="url"
+          id="url"
+          name="url"
+          placeholder="Add a URL to an Image"
+        />
+      </div>
+
+      <div class="custom-file p-5 mt-3">
+        <input type="file" class="custom-file-input" id="img" name="img" />
+        <label class="custom-file-label" for="img">Or Upload photo</label>
+      </div>
+
+      <button class="btn btn-dark btn-block text-primary" type="submit">
+        Add Post
+      </button>
+    </form>
+  </div>
 </main>
 {% endblock %}
