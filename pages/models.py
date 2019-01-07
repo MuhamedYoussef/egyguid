@@ -6,7 +6,7 @@ class City(models.Model):
     name = models.CharField(max_length=50)
     slug = models.SlugField(unique=True, blank=True)
     detail = models.TextField()
-    city_map = models.TextField(blank=True)
+    # gmap = models.TextField(blank=True)
     sal_delay = models.IntegerField(default=400)
     img = models.CharField(max_length=200)
 
