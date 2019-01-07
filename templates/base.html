@@ -47,13 +47,22 @@
       crossorigin="anonymous"
     ></script>
     <script src="{% static 'js/sal.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
     <script type="module">
       import jump from "{% static 'js/jump.module.js' %}";
       $("#aim_cities1").on("click", function() {
         jump(".cities");
       });
+
       $("#aim_cities2").on("click", function() {
         jump(".cities");
+      });
+
+      $("#totop").on("click", function() {
+        jump("#index_carousel", {
+          offset: -40,
+          duration: 1400
+        });
       });
 
       sal({
