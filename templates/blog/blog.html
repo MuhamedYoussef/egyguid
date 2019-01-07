@@ -11,7 +11,11 @@
       </div>
       <div class="card-title pt-5 text-center mx-auto">
         <h2 class="display-3 title">We share our stories</h2>
-        <a class="btn btn-primary text-dark font-weight-bold" href="{% url 'add' %}" style="font-size: 1.1rem; letter-spacing:.2rem;">
+        <a
+          class="btn btn-primary text-dark font-weight-bold"
+          href="{% url 'add' %}"
+          style="font-size: 1.1rem; letter-spacing:.2rem;"
+        >
           TELL US YOURS
         </a>
       </div>
@@ -42,7 +46,9 @@
         </a>
         <p>
           <span class="bg-primary p-1 mr-2 rounded">
-            <i class="fas fa-user"></i> Mohamed Youssef
+            <i class="fas fa-user"></i>
+            <!-- Full name of user -->
+            {{ post.owner.first_name }} {{ post.owner.last_name }}
           </span>
           <span class="bg-primary p-1 rounded">
             <i class="far fa-clock ml-2"></i> {{ post.pub_date }}

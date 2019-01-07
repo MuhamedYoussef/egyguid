@@ -20,7 +20,9 @@
         <h1 class="post_title text-center pt-5">{{ post.title }}</h1>
         <p class="text-center font-weight-bold">
           <span class="bg-primary p-1 mr-2 rounded">
-            <i class="fas fa-user"></i> Mohamed Youssef
+            <i class="fas fa-user"></i>
+            <!-- Full name of user -->
+            {{ post.owner.first_name }} {{ post.owner.last_name }}
           </span>
           <span class="bg-primary p-1 rounded">
             <i class="far fa-clock ml-2"></i> {{ post.pub_date }}

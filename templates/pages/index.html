@@ -107,7 +107,7 @@
       data-sal-delay="400"
       data-sal-easing="ease-out-bounce"
     >
-      Live the Adventure
+      Live the <span class="text-primary">Adventure</span>
     </h1>
     <div class="card">
       <img src="{% static 'img/sand.jpg' %}" class="card-img" alt="sand" />
@@ -167,9 +167,63 @@
     </div>
   </section>
 
-  <section class="visit py-5 my-5 container">
-    <h1 class="text-dark">Don't miss such moments</h1>
-    <button class="btn btn-dark text-primary">VISIT NOW</button>
+  <section class="py-5 my-5 container text-dark text-center">
+    <h1
+      data-sal="slide-down"
+      data-sal-duration="1200"
+      data-sal-delay="400"
+      data-sal-easing="ease-out-bounce"
+      class="my-5"
+    >
+      Meet Our <span class="text-primary">Team</span>
+    </h1>
+    <div class="row pb-5">
+      <div
+        data-sal="slide-up"
+        data-sal-duration="1200"
+        data-sal-delay="400"
+        data-sal-easing="ease-out-bounce"
+        class="col my-4"
+      >
+        <img
+          src="https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/1151051_647538705265708_1150214908_n.jpg?_nc_cat=107&_nc_ht=scontent-hbe1-1.xx&oh=c7b4ada4ee64879742211071db0e09cb&oe=5CD0ED5B"
+          alt="michael"
+          class="rounded-circle img-fluid shadow"
+          style="max-width: 170px;"
+        />
+        <h3 class="pt-4">Michael M.</h3>
+      </div>
+      <div
+        data-sal="slide-up"
+        data-sal-duration="1200"
+        data-sal-delay="500"
+        data-sal-easing="ease-out-bounce"
+        class="col my-4"
+      >
+        <img
+          src="https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/35941778_1033575133472176_3982451525489262592_n.jpg?_nc_cat=105&_nc_ht=scontent-hbe1-1.xx&oh=863e53a3fc04a8d6ee429a628b315e4f&oe=5C8CD4D1"
+          alt="joe"
+          class="rounded-circle img-fluid shadow"
+          style="max-width: 170px;"
+        />
+        <h3 class="pt-4">Mohamed Y.</h3>
+      </div>
+      <div
+        data-sal="slide-up"
+        data-sal-duration="1200"
+        data-sal-delay="600"
+        data-sal-easing="ease-out-bounce"
+        class="col my-4"
+      >
+        <img
+          src="https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/46284848_1578765778936707_7703653874128650240_n.jpg?_nc_cat=101&_nc_ht=scontent-hbe1-1.xx&oh=ba8f98e2c3c821d5a248f5f0ca157f75&oe=5CBB3125"
+          alt="besso"
+          class="rounded-circle img-fluid shadow"
+          style="max-width: 170px;"
+        />
+        <h3 class="pt-4">Mohamed A.</h3>
+      </div>
+    </div>
   </section>
 </main>
 {% include '../partials/_footer.html' %} {% endblock %}
